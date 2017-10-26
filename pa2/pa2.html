@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>ISP Assignment 2</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="factorial.js"></script>
+    <script type="text/javascript" src="validator.js"></script>
+    <script type="text/javascript" src="animate.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <h2>Welcome to Eric Merryman's site for assignment 2!</h2>
+	<p id="finTime">This project was completed 10/9 @ 12:00PM</p>
+	<p id="currTime">The current time is: </p><script>document.getElementById("currTime").innerHTML += Date();</script>
+	<h3>Please select a tool to use.</h3>
+	<div>
+		<button onclick="openFactorial()">Factorial calculator</button>
+		<button onclick="openValidator()">E-mail validator</button>
+		<button onclick="openAnimation()">Animation</button>
+	</div>
+	<hr>
+    <div id="factorial" style="display:none;">
+    <h3>This is the factorial tool</h3>
+	
+	  <p>Watch the font and color of the result change as the input increases!</p>
+	  <input type="text" id="factorialInput" value="8">
+	  <button onclick="factCheck();">Calculate</button>
+	
+	<p>Answer: <span id="factorialResult"></span></p>
+    </div>
+ 
+    <div id="validator" style="display:none;">
+    <h3>This is the validator tool</h3>
+	
+	  <p>Please enter an e-mail address below using the following form: xxxx@xxxx.xxx</p>
+	  <h4>Remember:</h4>
+	  <ul>
+		<li>The mailox name should only include alphanumeric characters</li>
+		<li>The domain should include only alpha characters with 3 characters after the period</li>
+	  </ul>
+	  <input type="text" id="validatorInput">
+	  <button onclick="emailCheck();">Validate</button>&nbsp;&nbsp;<span id="validatorResult"></span>
+	  <br>
+	  <p>The form below will validate as you type</p>
+	  <input type="text" onkeyup="validateInput()" id="validatorInput2">&nbsp;&nbsp;<span id="validatorResult2"></span>
+	  
+    </div>
+
+    <div id="animation" height="auto" onclick="moveImg(event)" style="display:none;">
+    <h3>This is the animation tool</h3>
+	<p>Click anywhere below the line and the ball will follow!</p>
+	<img id="pic" width="50" src="baseball.gif" alt="">
+    </div>
+  </body>
+</html>
